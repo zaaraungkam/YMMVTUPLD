@@ -10,3 +10,38 @@ on:
         description: (Optional) Please input the git tag or commit hash.
         type: string
         default: ""
+
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  serviceName: inventory-service-cloud
+  gradleVersion: '7.4.2'
+  azureContainerRegistryNonProd: enablementacrnonprod
+  sonarUrl: https://api.ext.exxonmobil.com/sonarqube
+  namespaceDev: inventory-dev
+  retagSuffixQa: qa
+  valuesFileDev: values-dev.yaml
+  kubernetesClusterNonProd: shared-aks-nonprod
+  resourceGroupNonProd: Rg-Enablement-App-USSC-NonProd
+  getApplicationUrlScriptPath: getApplicationUrl.sh
+  hostnameDev: dev.api.ext.exxonmobil.com
+  verifyPath: /actuator/health
+  verifyPathPrefix: /inventory/service-cloud
+  servicePath: /inventory/v1/xom-inventory-on-hand
+  keyVaultNameNonProd: inventory-nonprod-vault
+  tenantId: "d1ee1acd-bc7a-4bc4-a787-938c49a83906"
+  oasUrl: "https://raw.githubusercontent.com/ExxonMobil/inventory-service-cloud/main/OAS/oas.json"
+
+jobs:
+  Code-Test:
+    name: Code Test
+    runs-on: ubuntu-22.04
+    environment: DEV
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ inputs.git_ref }}
