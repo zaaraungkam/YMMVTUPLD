@@ -1,0 +1,12 @@
+name: "Build and deploy to DEV environment"
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      git_ref:
+        description: (Optional) Please input the git tag or commit hash.
+        type: string
+        default: ""
