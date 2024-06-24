@@ -42,8 +42,16 @@ jobs:
     runs-on: windows-latest
     environment: DEV
     steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/install-dependencies
+      - name: Checkout project
+        uses: actions/checkout@v3
         with:
           ref: ${{ inputs.git_ref }}
-          run: npm install --force
+
+  Install-Npm:
+    name: Install NPM
+    runs-on: windows-latest
+    environment: DEV
+    steps:
+      - name: Install NPM
+        uses: ./.github/actions/install-dependencies
+        run: npm install --force
