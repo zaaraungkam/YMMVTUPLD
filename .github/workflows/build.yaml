@@ -46,11 +46,3 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: ${{ inputs.git_ref }}
-
-  Filter-environment:
-    name: Filter environment
-    runs-on: windows-latest
-    environment: DEV
-    steps:
-      - run: echo "This is environment DEV"
-        if: $${{ Build.SourceBranch != 'refs/heads/acc' }}
