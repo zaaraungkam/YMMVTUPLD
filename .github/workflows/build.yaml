@@ -39,7 +39,7 @@ env:
 jobs:
   Code-Test:
     name: Code Test
-    runs-on: ubuntu-22.04
+    runs-on: windows-latest
     environment: DEV
     steps:
       - name: Checkout Project
