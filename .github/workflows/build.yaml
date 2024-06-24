@@ -51,5 +51,6 @@ jobs:
     name: Install NPM
     runs-on: windows-latest
     environment: DEV
+    needs: Code-Test
     steps:
       - run: npm install --force
