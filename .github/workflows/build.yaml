@@ -53,4 +53,5 @@ jobs:
     environment: DEV
     steps:
       - uses: ./.github/actions/install-dependencies
-        run: npm install --force
+        with:
+          run: npm install --force
