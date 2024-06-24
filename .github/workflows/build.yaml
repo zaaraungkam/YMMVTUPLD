@@ -52,6 +52,6 @@ jobs:
     runs-on: windows-latest
     environment: DEV
     steps:
-      - uses: ./.github/actions/install-dependencies
         with:
-          run: npm install --force
+          run: npm ci
+          shell: npm install --force
