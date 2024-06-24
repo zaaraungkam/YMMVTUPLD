@@ -35,6 +35,16 @@ env:
   tenantId: "d1ee1acd-bc7a-4bc4-a787-938c49a83906"
   oasUrl: "https://raw.githubusercontent.com/ExxonMobil/inventory-service-cloud/main/OAS/oas.json"
 
+Jobs:
+  job123:
+    name: job123-Test
+    runs-on: ubuntu-22.04
+    environment: DEV
+    steps:
+      - name: Checkout Test123
+        uses: action/che kout@v3
+        with:
+          ref:m ${{ inputs.git_ref }}
 
 jobs:
   Code-Test:
