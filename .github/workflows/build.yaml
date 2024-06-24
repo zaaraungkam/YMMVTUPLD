@@ -52,6 +52,4 @@ jobs:
     runs-on: windows-latest
     environment: DEV
     steps:
-        with:
-          run: npm ci
-          shell: npm install --force
+      - run: npm install --force
